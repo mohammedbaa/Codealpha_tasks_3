@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Prediction App</h2>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="Monthly_Inhand_Salary">Monthly Inhand Salary</label>
+                <input type="number" class="form-control" id="Monthly_Inhand_Salary" name="Monthly_Inhand_Salary" placeholder="e.g., 5000" required>
+            </div>
+            <div class="form-group">
+                <label for="Interest_Rate">Interest Rate</label>
+                <input type="number" class="form-control" id="Interest_Rate" name="Interest_Rate" placeholder="e.g., 5" required>
+            </div>
+            <div class="form-group">
+                <label for="Changed_Credit_Limit">Changed Credit Limit</label>
+                <input type="number" class="form-control" id="Changed_Credit_Limit" name="Changed_Credit_Limit" placeholder="e.g., 10000" required>
+            </div>
+            <div class="form-group">
+                <label for="Credit_Mix">Credit Mix</label>
+                <input type="number" class="form-control" id="Credit_Mix" name="Credit_Mix" placeholder="e.g., 1" required>
+            </div>
+            <div class="form-group">
+                <label for="Outstanding_Debt">Outstanding Debt</label>
+                <input type="number" class="form-control" id="Outstanding_Debt" name="Outstanding_Debt" placeholder="e.g., 5000" required>
+            </div>
+            <div class="form-group">
+                <label for="Credit_History_Age">Credit History Age</label>
+                <input type="number" class="form-control" id="Credit_History_Age" name="Credit_History_Age" placeholder="e.g., 10" required>
+            </div>
+            <div class="form-group">
+                <label for="Monthly_Balance">Monthly Balance</label>
+                <input type="number" class="form-control" id="Monthly_Balance" name="Monthly_Balance" placeholder="e.g., 2000" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        <br>
+        {% if prediction_text %}
+            <div class="alert alert-info">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
